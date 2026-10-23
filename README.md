@@ -25,21 +25,19 @@ A Python command-line tool that encrypts and decrypts text using three widely us
 
 ## Installation
 
-\`\`\`bash
 pip install -r requirements.txt
-\`\`\`
+
 
 ## Usage
 
-\`\`\`bash
+
 python text_encryption.py
-\`\`\`
+
 
 Follow the on-screen menu to choose an algorithm (AES / DES / RSA), choose Encrypt or Decrypt, then enter your key/passphrase and text.
 
 ### Example
 
-\`\`\`
 Enter choice [1-4]: 1
 
 Encrypt or Decrypt? [e/d]: e
