@@ -1,0 +1,12 @@
+# Never upload the encryption key
+secret.key
+
+# Python virtual environment
+.venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
