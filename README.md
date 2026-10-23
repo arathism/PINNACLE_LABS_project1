@@ -1,66 +1,63 @@
-# Text Encryption and Decryption Using Python
+# Text Encryption Tool — AES | DES | RSA
 
-## Project Overview
+A Python command-line tool that encrypts and decrypts text using three widely used cryptographic algorithms: AES, DES, and RSA. Built as part of the Pinnacle Labs Cybersecurity Internship.
 
-This project is a simple cybersecurity application that encrypts and decrypts text messages using Python and the Cryptography library.
+## Overview
 
-It demonstrates the importance of encryption in protecting the confidentiality and integrity of data.
-
-## Objectives
-
-- Understand the fundamentals of text encryption.
-- Encrypt plain-text messages.
-- Decrypt encrypted messages using a secret key.
-- Learn basic Python cryptography.
-- Practice building and testing a cybersecurity application.
-
-## Technologies Used
-
-- Python
-- Visual Studio Code
-- Cryptography library
-- Fernet authenticated encryption
+| Algorithm | Type | Key Size | Notes |
+|-----------|------|----------|-------|
+| AES | Symmetric | 256-bit | Industry-standard encryption used today |
+| DES | Symmetric | 64-bit (56-bit effective) | Included for educational comparison; considered insecure by modern standards |
+| RSA | Asymmetric | 2048-bit keypair | Uses a public/private key pair; keys are auto-generated on first run |
 
 ## Features
 
-- Encrypt text messages.
-- Decrypt previously encrypted messages.
-- Generate and save a secret key.
-- Handle invalid encrypted input.
-- Provide a simple command-line interface.
+- Interactive command-line menu
+- Encrypt and decrypt text with AES, DES, or RSA
+- AES and DES use CBC mode with a randomly generated IV per message, so identical plaintext never produces identical ciphertext
+- RSA uses OAEP padding with an auto-generated 2048-bit keypair
+- Output is Base64-encoded for easy copying and sharing
+
+## Requirements
+
+- Python 3.8+
+- pycryptodome
 
 ## Installation
 
-Install Python and open the project folder in VS Code.
+\`\`\`bash
+pip install -r requirements.txt
+\`\`\`
 
-Install the required dependency:
+## Usage
 
-```bash
-python -m pip install -r requirements.txt
-```
+\`\`\`bash
+python text_encryption.py
+\`\`\`
 
-## Run the Application
+Follow the on-screen menu to choose an algorithm (AES / DES / RSA), choose Encrypt or Decrypt, then enter your key/passphrase and text.
 
-```bash
-python main.py
-```
+### Example
 
-## How to Use
+\`\`\`
+Enter choice [1-4]: 1
+Encrypt or Decrypt? [e/d]: e
+Enter a passphrase/key: mypassword123
+Enter text to encrypt: Hello World
 
-1. Run the application.
-2. Choose option 1 to encrypt a message.
-3. Copy the encrypted message.
-4. Choose option 2 to decrypt it.
-5. Paste the encrypted message.
-6. Verify that the original message is recovered.
+Encrypted (Base64):
+NGE/iOfU4ortlAfhhayDVm5i7lAmjcuUFRJFQ3PFhA8=
+\`\`\`
 
-## Security Notes
+## How It Works
 
-- Keep the secret key private.
-- Do not upload `secret.key` to GitHub.
-- Anyone with the secret key can decrypt messages protected by it.
-- This project is an educational demonstration and is not a complete secure messaging application.
+- **AES/DES**: A passphrase is used to derive a fixed-length symmetric key. Each encryption generates a random IV, which is stored alongside the ciphertext so decryption can recover it.
+- **RSA**: A 2048-bit keypair is generated on first run and saved to `rsa_keys/`. The public key encrypts; the private key decrypts — demonstrating asymmetric cryptography.
 
-## Conclusion
+## Disclaimer
 
-This project demonstrates how text encryption and decryption work and why protecting secret keys is important for cybersecurity.
+DES is included only for educational comparison. Its short key length makes it unsuitable for securing real data — use AES for any practical purpose.
+
+## Author
+
+Arathi Shekhar Munavalli
