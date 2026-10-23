@@ -41,13 +41,16 @@ Follow the on-screen menu to choose an algorithm (AES / DES / RSA), choose Encry
 
 \`\`\`
 Enter choice [1-4]: 1
+
 Encrypt or Decrypt? [e/d]: e
+
 Enter a passphrase/key: mypassword123
+
 Enter text to encrypt: Hello World
 
 Encrypted (Base64):
 NGE/iOfU4ortlAfhhayDVm5i7lAmjcuUFRJFQ3PFhA8=
-\`\`\`
+
 
 ## How It Works
 
