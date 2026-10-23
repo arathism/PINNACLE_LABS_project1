@@ -50,6 +50,9 @@ Encrypted (Base64):
 NGE/iOfU4ortlAfhhayDVm5i7lAmjcuUFRJFQ3PFhA8=
 
 
+https://github.com/user-attachments/assets/adb91376-e9fe-4594-b2ce-39ddb7883c4d
+
+
 ## How It Works
 
 - **AES/DES**: A passphrase is used to derive a fixed-length symmetric key. Each encryption generates a random IV, which is stored alongside the ciphertext so decryption can recover it.
